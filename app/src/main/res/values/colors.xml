@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="purple_500">#6200EE</color>
+    <color name="background_light">#FAFAFA</color>
+    <color name="egg_shell">#f0ead6</color> <!-- example: deep blue -->
+
+</resources>
