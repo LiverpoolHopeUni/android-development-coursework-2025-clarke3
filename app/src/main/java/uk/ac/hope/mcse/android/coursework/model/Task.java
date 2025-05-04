@@ -1,7 +1,7 @@
 package uk.ac.hope.mcse.android.coursework.model;
 
 public class Task {
-    private String title;
+    private final String title;
     private boolean isDone;
 
     public Task(String title, boolean isDone) {

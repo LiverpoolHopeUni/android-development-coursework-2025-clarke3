@@ -9,4 +9,10 @@
     <string name="calendar">Calendar</string>
     <string name="home">Home</string>
     <string name="greetings">Hello Clarke</string>
+    <string name="start">Start</string>
+    <string name="end">End</string>
+    <string name="description">Description</string>
+    <string name="emoji_placeholder">📅</string>
+    <string name="events">Events</string>
+
 </resources>

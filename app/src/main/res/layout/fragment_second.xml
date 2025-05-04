@@ -1,55 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/border_black">
+    android:background="@color/background_light">
 
-    <!-- Toolbar -->
+    <!-- Top toolbar -->
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/secondFragmentToolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="@color/purple_500"
         android:title="📅 Calendar"
         android:titleTextColor="@android:color/white"
+        android:textSize="5sp"
         app:titleCentered="true"
-        app:menu="@menu/main_menu"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 
-    <!-- Real Calendar View -->
+    <!-- Calendar view -->
     <com.prolificinteractive.materialcalendarview.MaterialCalendarView
         android:id="@+id/calendarView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_width="363dp"
+        android:layout_height="278dp"
         android:layout_margin="16dp"
-        android:background="@drawable/bg_calendar"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/secondFragmentToolbar"
-        app:layout_constraintVertical_bias="0.15"
-        app:mcv_arrowColor="@android:color/black"
+        app:mcv_arrowColor="@color/text_primary"
         app:mcv_dateTextAppearance="@style/CalendarDateText"
-        app:mcv_selectionColor="@color/purple_500"
+        app:mcv_selectionColor="@color/primary_green"
         app:mcv_showOtherDates="none"
         app:mcv_tileSize="44dp"
         app:mcv_weekDayTextAppearance="@style/CalendarWeekText" />
 
-    <TextView
-        android:id="@+id/eventLegend"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:textColor="#555"
-        android:layout_marginTop="8dp"
+
+    <!-- Events card: fills remaining space -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/eventTableContainer"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="32dp"
+        app:cardBackgroundColor="@color/surface_white"
+        app:cardCornerRadius="16dp"
         app:layout_constraintTop_toBottomOf="@id/calendarView"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
 
+        <!-- Inside the card: title + RecyclerView that fills rest -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:padding="12dp">
 
+            <TextView
+                android:id="@+id/yourEventsTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/events"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:gravity="center"
+                android:textColor="@color/text_primary"
+                android:paddingBottom="8dp"/>
 
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/eventTable"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:clipToPadding="false"
+                android:overScrollMode="always"
+                android:nestedScrollingEnabled="true"/>
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+

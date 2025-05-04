@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="24dp">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event Title"
+            android:textStyle="bold"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_event_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="e.g. Team Meeting"
+            android:inputType="text"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Emoji"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"/>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/input_event_emoji"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="e.g. 📅"
+            android:inputType="text"
+            android:maxLines="1"/>
+
+        <!-- Start date -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Start Date (D/M/Y)"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_start_day"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="DD"
+                android:inputType="number"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_start_month"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="MM"
+                android:inputType="number"
+                android:layout_marginStart="8dp"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_start_year"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:hint="YYYY"
+                android:inputType="number"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+        <!-- End date -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="End Date (D/M/Y)"
+            android:textStyle="bold"
+            android:layout_marginTop="12dp"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_end_day"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="DD"
+                android:inputType="number"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_end_month"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:hint="MM"
+                android:inputType="number"
+                android:layout_marginStart="8dp"/>
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/input_end_year"
+                android:layout_width="0dp"
+                android:layout_weight="2"
+                android:layout_height="wrap_content"
+                android:hint="YYYY"
+                android:inputType="number"
+                android:layout_marginStart="8dp"/>
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>
